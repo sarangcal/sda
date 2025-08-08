@@ -42,6 +42,87 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0.7; }
         }
+        
+        .slide {
+            display: none;
+            position: relative;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        .slideshow-container {
+            position: relative;
+        }
+        
+        .carousel-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .carousel-slide {
+            transition: all 0.5s ease;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .carousel-slide.main {
+            width: 600px;
+            height: 400px;
+            transform: scale(1);
+            z-index: 3;
+        }
+        
+        .carousel-slide.side {
+            width: 200px;
+            height: 150px;
+            transform: scale(0.8);
+            opacity: 0.7;
+            cursor: pointer;
+            z-index: 1;
+        }
+        
+        .carousel-slide.side:hover {
+            transform: scale(0.85);
+            opacity: 0.9;
+        }
+        
+        .carousel-slide-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .carousel-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            color: white;
+        }
+        
+        .carousel-slide.side .carousel-overlay {
+            padding: 10px;
+        }
+        
+        .carousel-slide.side .carousel-overlay h4 {
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+        
+        .carousel-slide.side .carousel-overlay p {
+            font-size: 0.7rem;
+        }
     </style>
 </head>
 <body class="font-inter bg-gray-50">
@@ -282,129 +363,59 @@
                 <button class="gallery-filter bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-purple-600 hover:text-white transition-colors" data-filter="yoga">Yoga</button>
             </div>
             
-            <!-- Photo Slideshow -->
-            <div class="relative max-w-4xl mx-auto">
-                <div class="slideshow-container bg-gray-100 rounded-2xl overflow-hidden shadow-2xl">
-                    <!-- Slides -->
-                    <div class="slide active contemporary" data-category="contemporary">
-                        <div class="relative h-96 md:h-[500px] bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+            <!-- Photo Carousel -->
+            <div class="relative max-w-7xl mx-auto">
+                <div class="carousel-container bg-gray-50 rounded-3xl shadow-2xl overflow-hidden">
+                    <!-- Left Side Image -->
+                    <div id="left-slide" class="carousel-slide side">
+                        <div class="carousel-slide-content bg-gradient-to-br from-blue-100 to-green-200">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">🌸</div>
+                                <h3 class="text-lg font-playfair font-semibold text-blue-800">Meditation Flow</h3>
+                            </div>
+                            <div class="carousel-overlay">
+                                <h4 class="font-semibold">Flow & Balance</h4>
+                                <p>Advanced yoga sequences</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Center Image -->
+                    <div id="main-slide" class="carousel-slide main">
+                        <div class="carousel-slide-content bg-gradient-to-br from-blue-100 to-blue-200">
                             <div class="text-center">
                                 <div class="text-8xl mb-4">🌊</div>
                                 <h3 class="text-3xl font-playfair font-semibold text-blue-800 mb-2">Contemporary Class</h3>
                                 <p class="text-lg text-blue-600">Fluid Movements & Emotional Expression</p>
                             </div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                            <h4 class="text-white text-xl font-semibold mb-2">Contemporary Dance Session</h4>
-                            <p class="text-white/90">Students exploring emotional expression through contemporary dance techniques in our spacious studio.</p>
+                            <div class="carousel-overlay">
+                                <h4 class="text-xl font-semibold mb-2">Contemporary Dance Session</h4>
+                                <p>Students exploring emotional expression through contemporary dance techniques in our spacious studio.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="slide contemporary" data-category="contemporary">
-                        <div class="relative h-96 md:h-[500px] bg-gradient-to-br from-indigo-100 to-indigo-200 flex items-center justify-center">
+                    <!-- Right Side Image -->
+                    <div id="right-slide" class="carousel-slide side">
+                        <div class="carousel-slide-content bg-gradient-to-br from-indigo-100 to-indigo-200">
                             <div class="text-center">
-                                <div class="text-8xl mb-4">💫</div>
-                                <h3 class="text-3xl font-playfair font-semibold text-indigo-800 mb-2">Solo Performance</h3>
-                                <p class="text-lg text-indigo-600">Expressive Dance & Artistic Movement</p>
+                                <div class="text-4xl mb-2">💫</div>
+                                <h3 class="text-lg font-playfair font-semibold text-indigo-800">Solo Performance</h3>
                             </div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                            <h4 class="text-white text-xl font-semibold mb-2">Student Showcase</h4>
-                            <p class="text-white/90">A stunning solo performance showcasing years of dedicated training and artistic growth.</p>
-                        </div>
-                    </div>
-
-                    <div class="slide bollywood" data-category="bollywood">
-                        <div class="relative h-96 md:h-[500px] bg-gradient-to-br from-orange-100 to-red-200 flex items-center justify-center">
-                            <div class="text-center">
-                                <div class="text-8xl mb-4">🎭</div>
-                                <h3 class="text-3xl font-playfair font-semibold text-orange-800 mb-2">Bollywood Fusion</h3>
-                                <p class="text-lg text-orange-600">Colorful Performance & Cultural Dance</p>
+                            <div class="carousel-overlay">
+                                <h4 class="font-semibold">Student Showcase</h4>
+                                <p>Artistic expression</p>
                             </div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                            <h4 class="text-white text-xl font-semibold mb-2">Bollywood Extravaganza</h4>
-                            <p class="text-white/90">The vibrant energy of Bollywood dance combining traditional and modern choreography.</p>
-                        </div>
-                    </div>
-
-                    <div class="slide bollywood" data-category="bollywood">
-                        <div class="relative h-96 md:h-[500px] bg-gradient-to-br from-pink-100 to-purple-200 flex items-center justify-center">
-                            <div class="text-center">
-                                <div class="text-8xl mb-4">👑</div>
-                                <h3 class="text-3xl font-playfair font-semibold text-purple-800 mb-2">Traditional Dance</h3>
-                                <p class="text-lg text-purple-600">Cultural Heritage & Classical Forms</p>
-                            </div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                            <h4 class="text-white text-xl font-semibold mb-2">Cultural Celebration</h4>
-                            <p class="text-white/90">Students learning traditional Bollywood choreography with authentic expressions and movements.</p>
-                        </div>
-                    </div>
-
-                    <div class="slide zumba" data-category="zumba">
-                        <div class="relative h-96 md:h-[500px] bg-gradient-to-br from-red-100 to-orange-200 flex items-center justify-center">
-                            <div class="text-center">
-                                <div class="text-8xl mb-4">🔥</div>
-                                <h3 class="text-3xl font-playfair font-semibold text-red-800 mb-2">Zumba Party</h3>
-                                <p class="text-lg text-red-600">High Energy Fun & Fitness</p>
-                            </div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                            <h4 class="text-white text-xl font-semibold mb-2">Fitness Dance Party</h4>
-                            <p class="text-white/90">The ultimate fitness party atmosphere where students burn calories while having fun.</p>
-                        </div>
-                    </div>
-
-                    <div class="slide zumba" data-category="zumba">
-                        <div class="relative h-96 md:h-[500px] bg-gradient-to-br from-yellow-100 to-red-200 flex items-center justify-center">
-                            <div class="text-center">
-                                <div class="text-8xl mb-4">💃</div>
-                                <h3 class="text-3xl font-playfair font-semibold text-yellow-800 mb-2">Group Fitness</h3>
-                                <p class="text-lg text-yellow-600">Dance Workout & Community</p>
-                            </div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                            <h4 class="text-white text-xl font-semibold mb-2">Community Workout</h4>
-                            <p class="text-white/90">Students of all fitness levels enjoying the inclusive and supportive Zumba environment.</p>
-                        </div>
-                    </div>
-
-                    <div class="slide yoga" data-category="yoga">
-                        <div class="relative h-96 md:h-[500px] bg-gradient-to-br from-green-100 to-teal-200 flex items-center justify-center">
-                            <div class="text-center">
-                                <div class="text-8xl mb-4">🧘‍♀️</div>
-                                <h3 class="text-3xl font-playfair font-semibold text-green-800 mb-2">Peaceful Practice</h3>
-                                <p class="text-lg text-green-600">Mind & Body Harmony</p>
-                            </div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                            <h4 class="text-white text-xl font-semibold mb-2">Yoga Serenity</h4>
-                            <p class="text-white/90">Finding inner peace through mindful yoga practice in our tranquil studio space.</p>
-                        </div>
-                    </div>
-
-                    <div class="slide yoga" data-category="yoga">
-                        <div class="relative h-96 md:h-[500px] bg-gradient-to-br from-blue-100 to-green-200 flex items-center justify-center">
-                            <div class="text-center">
-                                <div class="text-8xl mb-4">🌸</div>
-                                <h3 class="text-3xl font-playfair font-semibold text-blue-800 mb-2">Meditation Flow</h3>
-                                <p class="text-lg text-blue-600">Inner Balance & Mindfulness</p>
-                            </div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                            <h4 class="text-white text-xl font-semibold mb-2">Flow & Balance</h4>
-                            <p class="text-white/90">Advanced practitioners demonstrating beautiful flow sequences and balance poses.</p>
                         </div>
                     </div>
 
                     <!-- Navigation Arrows -->
-                    <button class="prev-btn absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+                    <button class="prev-btn absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 z-10">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                         </svg>
                     </button>
-                    <button class="next-btn absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+                    <button class="next-btn absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 z-10">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
@@ -712,11 +723,13 @@
         });
 
         // Trial class booking
-        document.querySelectorAll('button:contains("Book Trial Class")').forEach(button => {
-            button.addEventListener('click', function() {
-                const className = this.closest('.dance-card').querySelector('h3').textContent;
-                alert(`Great choice! We'll contact you soon to schedule your ${className} trial class.`);
-            });
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Book Trial Class')) {
+                button.addEventListener('click', function() {
+                    const className = this.closest('.dance-card').querySelector('h3').textContent;
+                    alert(`Great choice! We'll contact you soon to schedule your ${className} trial class.`);
+                });
+            }
         });
 
         // Join Now buttons
@@ -730,13 +743,96 @@
             }
         });
 
-        // Slideshow functionality
+        // Carousel functionality
         let currentSlide = 0;
         let isPlaying = true;
         let slideInterval;
         let currentFilter = 'all';
         
-        const slides = document.querySelectorAll('.slide');
+        // All slide data
+        const slideData = [
+            {
+                category: 'contemporary',
+                emoji: '🌊',
+                title: 'Contemporary Class',
+                subtitle: 'Fluid Movements & Emotional Expression',
+                description: 'Students exploring emotional expression through contemporary dance techniques in our spacious studio.',
+                gradient: 'from-blue-100 to-blue-200',
+                textColor: 'text-blue-800',
+                subtitleColor: 'text-blue-600'
+            },
+            {
+                category: 'contemporary',
+                emoji: '💫',
+                title: 'Solo Performance',
+                subtitle: 'Expressive Dance & Artistic Movement',
+                description: 'A stunning solo performance showcasing years of dedicated training and artistic growth.',
+                gradient: 'from-indigo-100 to-indigo-200',
+                textColor: 'text-indigo-800',
+                subtitleColor: 'text-indigo-600'
+            },
+            {
+                category: 'bollywood',
+                emoji: '🎭',
+                title: 'Bollywood Fusion',
+                subtitle: 'Colorful Performance & Cultural Dance',
+                description: 'The vibrant energy of Bollywood dance combining traditional and modern choreography.',
+                gradient: 'from-orange-100 to-red-200',
+                textColor: 'text-orange-800',
+                subtitleColor: 'text-orange-600'
+            },
+            {
+                category: 'bollywood',
+                emoji: '👑',
+                title: 'Traditional Dance',
+                subtitle: 'Cultural Heritage & Classical Forms',
+                description: 'Students learning traditional Bollywood choreography with authentic expressions and movements.',
+                gradient: 'from-pink-100 to-purple-200',
+                textColor: 'text-purple-800',
+                subtitleColor: 'text-purple-600'
+            },
+            {
+                category: 'zumba',
+                emoji: '🔥',
+                title: 'Zumba Party',
+                subtitle: 'High Energy Fun & Fitness',
+                description: 'The ultimate fitness party atmosphere where students burn calories while having fun.',
+                gradient: 'from-red-100 to-orange-200',
+                textColor: 'text-red-800',
+                subtitleColor: 'text-red-600'
+            },
+            {
+                category: 'zumba',
+                emoji: '💃',
+                title: 'Group Fitness',
+                subtitle: 'Dance Workout & Community',
+                description: 'Students of all fitness levels enjoying the inclusive and supportive Zumba environment.',
+                gradient: 'from-yellow-100 to-red-200',
+                textColor: 'text-yellow-800',
+                subtitleColor: 'text-yellow-600'
+            },
+            {
+                category: 'yoga',
+                emoji: '🧘‍♀️',
+                title: 'Peaceful Practice',
+                subtitle: 'Mind & Body Harmony',
+                description: 'Finding inner peace through mindful yoga practice in our tranquil studio space.',
+                gradient: 'from-green-100 to-teal-200',
+                textColor: 'text-green-800',
+                subtitleColor: 'text-green-600'
+            },
+            {
+                category: 'yoga',
+                emoji: '🌸',
+                title: 'Meditation Flow',
+                subtitle: 'Inner Balance & Mindfulness',
+                description: 'Advanced practitioners demonstrating beautiful flow sequences and balance poses.',
+                gradient: 'from-blue-100 to-green-200',
+                textColor: 'text-blue-800',
+                subtitleColor: 'text-blue-600'
+            }
+        ];
+
         const prevBtn = document.querySelector('.prev-btn');
         const nextBtn = document.querySelector('.next-btn');
         const playPauseBtn = document.getElementById('play-pause-btn');
@@ -744,50 +840,76 @@
         const totalSlidesSpan = document.getElementById('total-slides');
         const indicatorsContainer = document.getElementById('slide-indicators');
         const galleryFilters = document.querySelectorAll('.gallery-filter');
+        
+        const leftSlide = document.getElementById('left-slide');
+        const mainSlide = document.getElementById('main-slide');
+        const rightSlide = document.getElementById('right-slide');
 
-        // Initialize slideshow
-        function initSlideshow() {
-            updateSlideVisibility();
-            createIndicators();
-            startSlideshow();
-            updateSlideCounter();
-        }
-
-        // Filter slides based on category
-        function getVisibleSlides() {
+        // Get filtered slides
+        function getFilteredSlides() {
             if (currentFilter === 'all') {
-                return Array.from(slides);
+                return slideData;
             }
-            return Array.from(slides).filter(slide => slide.classList.contains(currentFilter));
+            return slideData.filter(slide => slide.category === currentFilter);
         }
 
-        // Update slide visibility
-        function updateSlideVisibility() {
-            const visibleSlides = getVisibleSlides();
+        // Update carousel display
+        function updateCarousel() {
+            const filteredSlides = getFilteredSlides();
+            const totalSlides = filteredSlides.length;
             
-            slides.forEach(slide => {
-                slide.style.display = 'none';
-                slide.classList.remove('active');
-            });
+            if (totalSlides === 0) return;
             
-            if (visibleSlides.length > 0) {
-                if (currentSlide >= visibleSlides.length) {
-                    currentSlide = 0;
-                }
-                visibleSlides[currentSlide].style.display = 'block';
-                visibleSlides[currentSlide].classList.add('active');
+            // Ensure currentSlide is within bounds
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
             }
             
-            totalSlidesSpan.textContent = visibleSlides.length;
+            // Calculate indices for left, main, and right slides
+            const leftIndex = currentSlide === 0 ? totalSlides - 1 : currentSlide - 1;
+            const mainIndex = currentSlide;
+            const rightIndex = (currentSlide + 1) % totalSlides;
+            
+            // Update left slide
+            updateSlideElement(leftSlide, filteredSlides[leftIndex], 'side');
+            
+            // Update main slide
+            updateSlideElement(mainSlide, filteredSlides[mainIndex], 'main');
+            
+            // Update right slide
+            updateSlideElement(rightSlide, filteredSlides[rightIndex], 'side');
+            
+            // Update indicators and counter
+            createIndicators();
             updateSlideCounter();
+        }
+
+        // Update individual slide element
+        function updateSlideElement(element, slideInfo, type) {
+            const content = element.querySelector('.carousel-slide-content');
+            const isMain = type === 'main';
+            
+            content.className = `carousel-slide-content bg-gradient-to-br ${slideInfo.gradient}`;
+            
+            content.innerHTML = `
+                <div class="text-center">
+                    <div class="${isMain ? 'text-8xl mb-4' : 'text-4xl mb-2'}">${slideInfo.emoji}</div>
+                    <h3 class="${isMain ? 'text-3xl' : 'text-lg'} font-playfair font-semibold ${slideInfo.textColor} ${isMain ? 'mb-2' : ''}">${slideInfo.title}</h3>
+                    ${isMain ? `<p class="text-lg ${slideInfo.subtitleColor}">${slideInfo.subtitle}</p>` : ''}
+                </div>
+                <div class="carousel-overlay">
+                    <h4 class="${isMain ? 'text-xl' : ''} font-semibold ${isMain ? 'mb-2' : ''}">${isMain ? slideInfo.title : slideInfo.title}</h4>
+                    <p>${isMain ? slideInfo.description : slideInfo.subtitle}</p>
+                </div>
+            `;
         }
 
         // Create slide indicators
         function createIndicators() {
-            const visibleSlides = getVisibleSlides();
+            const filteredSlides = getFilteredSlides();
             indicatorsContainer.innerHTML = '';
             
-            visibleSlides.forEach((_, index) => {
+            filteredSlides.forEach((_, index) => {
                 const indicator = document.createElement('button');
                 indicator.className = `w-3 h-3 rounded-full transition-colors ${index === currentSlide ? 'bg-purple-600' : 'bg-gray-300'}`;
                 indicator.addEventListener('click', () => goToSlide(index));
@@ -797,44 +919,32 @@
 
         // Go to specific slide
         function goToSlide(index) {
-            const visibleSlides = getVisibleSlides();
-            if (index >= 0 && index < visibleSlides.length) {
+            const filteredSlides = getFilteredSlides();
+            if (index >= 0 && index < filteredSlides.length) {
                 currentSlide = index;
-                updateSlideVisibility();
-                updateIndicators();
-                updateSlideCounter();
+                updateCarousel();
             }
         }
 
         // Next slide
         function nextSlide() {
-            const visibleSlides = getVisibleSlides();
-            currentSlide = (currentSlide + 1) % visibleSlides.length;
-            updateSlideVisibility();
-            updateIndicators();
-            updateSlideCounter();
+            const filteredSlides = getFilteredSlides();
+            currentSlide = (currentSlide + 1) % filteredSlides.length;
+            updateCarousel();
         }
 
         // Previous slide
         function prevSlide() {
-            const visibleSlides = getVisibleSlides();
-            currentSlide = currentSlide === 0 ? visibleSlides.length - 1 : currentSlide - 1;
-            updateSlideVisibility();
-            updateIndicators();
-            updateSlideCounter();
-        }
-
-        // Update indicators
-        function updateIndicators() {
-            const indicators = indicatorsContainer.querySelectorAll('button');
-            indicators.forEach((indicator, index) => {
-                indicator.className = `w-3 h-3 rounded-full transition-colors ${index === currentSlide ? 'bg-purple-600' : 'bg-gray-300'}`;
-            });
+            const filteredSlides = getFilteredSlides();
+            currentSlide = currentSlide === 0 ? filteredSlides.length - 1 : currentSlide - 1;
+            updateCarousel();
         }
 
         // Update slide counter
         function updateSlideCounter() {
+            const filteredSlides = getFilteredSlides();
             currentSlideSpan.textContent = currentSlide + 1;
+            totalSlidesSpan.textContent = filteredSlides.length;
         }
 
         // Start slideshow
@@ -885,6 +995,23 @@
 
         playPauseBtn.addEventListener('click', togglePlayPause);
 
+        // Side slide click functionality
+        leftSlide.addEventListener('click', () => {
+            prevSlide();
+            if (isPlaying) {
+                stopSlideshow();
+                startSlideshow();
+            }
+        });
+
+        rightSlide.addEventListener('click', () => {
+            nextSlide();
+            if (isPlaying) {
+                stopSlideshow();
+                startSlideshow();
+            }
+        });
+
         // Gallery filtering functionality
         galleryFilters.forEach(filter => {
             filter.addEventListener('click', function() {
@@ -901,14 +1028,13 @@
                 currentFilter = this.getAttribute('data-filter');
                 currentSlide = 0; // Reset to first slide of filtered category
                 
-                updateSlideVisibility();
-                createIndicators();
-                updateSlideCounter();
+                updateCarousel();
             });
         });
 
-        // Initialize slideshow on page load
-        initSlideshow();
+        // Initialize carousel on page load
+        updateCarousel();
+        startSlideshow();
 
         // Social media button functionality
         document.querySelectorAll('button').forEach(button => {
@@ -934,5 +1060,5 @@
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96bf070cb1937f7a',t:'MTc1NDY1NjI1My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96bf1046d7a57f16',t:'MTc1NDY1NjYzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
