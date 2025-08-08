@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swara Dance Academy - Contemporary, Bollywood, Zumba & Yoga</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .dance-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        }
+        
+        .dance-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="font-playfair text-2xl font-bold text-purple-600">Swara Dance Academy</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#classes" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors">Classes</a>
+                        <a href="#about" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#gallery" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors">Gallery</a>
+                        <a href="#contact" class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                        <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">Join Now</button>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-purple-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-purple-600">Home</a>
+                <a href="#classes" class="block px-3 py-2 text-gray-700 hover:text-purple-600">Classes</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-purple-600">About</a>
+                <a href="#gallery" class="block px-3 py-2 text-gray-700 hover:text-purple-600">Gallery</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-purple-600">Contact</a>
+                <button class="w-full text-left bg-purple-600 text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition-colors">Join Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-16 min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="font-playfair text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Dance Your Way to 
+                        <span class="text-yellow-300">Excellence</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-purple-100 leading-relaxed">
+                        Discover the joy of movement at Swara Dance Academy. From graceful Contemporary to vibrant Bollywood, energetic Zumba to peaceful Yoga - find your rhythm with us.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-yellow-400 text-purple-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-300 transition-colors transform hover:scale-105">
+                            Start Your Journey
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors">
+                            Watch Classes
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="floating-animation">
+                        <div class="w-80 h-80 mx-auto bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                            <div class="text-center text-white">
+                                <div class="text-6xl mb-4">💃</div>
+                                <p class="font-playfair text-2xl font-semibold">Express Yourself</p>
+                                <p class="text-purple-200">Through Movement</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classes Section -->
+    <section id="classes" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl font-bold text-gray-800 mb-4">Our Dance Classes</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Explore our diverse range of dance styles, each designed to inspire, challenge, and transform you.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Contemporary -->
+                <div class="dance-card rounded-2xl p-8 shadow-lg border border-gray-100">
+                    <div class="text-center">
+                        <div class="text-5xl mb-4">🌊</div>
+                        <h3 class="font-playfair text-2xl font-semibold text-gray-800 mb-3">Contemporary</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Express emotions through fluid movements and creative storytelling. Perfect for artistic souls.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <p class="text-sm text-gray-500">⏰ Mon, Wed, Fri - 6:00 PM</p>
+                            <p class="text-sm text-gray-500">💰 $80/month</p>
+                            <p class="text-sm text-gray-500">👥 All levels welcome</p>
+                        </div>
+                        <button class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors font-medium">
+                            Book Trial Class
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bollywood -->
+                <div class="dance-card rounded-2xl p-8 shadow-lg border border-gray-100">
+                    <div class="text-center">
+                        <div class="text-5xl mb-4">🎭</div>
+                        <h3 class="font-playfair text-2xl font-semibold text-gray-800 mb-3">Bollywood</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Vibrant, colorful, and full of energy! Learn traditional and modern Bollywood choreography.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <p class="text-sm text-gray-500">⏰ Tue, Thu, Sat - 7:00 PM</p>
+                            <p class="text-sm text-gray-500">💰 $75/month</p>
+                            <p class="text-sm text-gray-500">👥 Beginner to Advanced</p>
+                        </div>
+                        <button class="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-medium">
+                            Book Trial Class
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Zumba -->
+                <div class="dance-card rounded-2xl p-8 shadow-lg border border-gray-100">
+                    <div class="text-center">
+                        <div class="text-5xl mb-4">🔥</div>
+                        <h3 class="font-playfair text-2xl font-semibold text-gray-800 mb-3">Zumba</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            High-energy fitness party! Burn calories while dancing to Latin and international beats.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <p class="text-sm text-gray-500">⏰ Mon, Wed, Fri - 7:30 PM</p>
+                            <p class="text-sm text-gray-500">💰 $70/month</p>
+                            <p class="text-sm text-gray-500">👥 All fitness levels</p>
+                        </div>
+                        <button class="w-full bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-medium">
+                            Book Trial Class
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Yoga -->
+                <div class="dance-card rounded-2xl p-8 shadow-lg border border-gray-100">
+                    <div class="text-center">
+                        <div class="text-5xl mb-4">🧘‍♀️</div>
+                        <h3 class="font-playfair text-2xl font-semibold text-gray-800 mb-3">Yoga</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Find balance, flexibility, and inner peace through mindful movement and breathing.
+                        </p>
+                        <div class="space-y-2 mb-6">
+                            <p class="text-sm text-gray-500">⏰ Daily - 6:00 AM & 8:00 PM</p>
+                            <p class="text-sm text-gray-500">💰 $60/month</p>
+                            <p class="text-sm text-gray-500">👥 Beginner friendly</p>
+                        </div>
+                        <button class="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition-colors font-medium">
+                            Book Trial Class
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-playfair text-4xl font-bold text-gray-800 mb-6">About Swara Dance Academy</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Founded with a passion for movement and expression, Swara Dance Academy has been nurturing dancers of all ages and skill levels for over a decade. Our name "Swara" means musical note in Sanskrit, reflecting our belief that every movement should be in harmony with rhythm and soul.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Our experienced instructors bring years of professional training and performance experience, creating a supportive environment where students can explore their creativity, build confidence, and achieve their dance goals.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-600 mb-2">500+</div>
+                            <p class="text-gray-600">Happy Students</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-600 mb-2">10+</div>
+                            <p class="text-gray-600">Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-purple-100 rounded-2xl p-8 text-center">
+                        <div class="text-6xl mb-4">🏆</div>
+                        <h3 class="font-playfair text-2xl font-semibold text-gray-800 mb-4">Why Choose Us?</h3>
+                        <ul class="text-left space-y-3 text-gray-600">
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-3">✓</span>
+                                Certified professional instructors
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-3">✓</span>
+                                Small class sizes for personal attention
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-3">✓</span>
+                                Flexible scheduling options
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-3">✓</span>
+                                Performance opportunities
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-500 mr-3">✓</span>
+                                Supportive community environment
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Library Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl font-bold text-gray-800 mb-4">Photo Library</h2>
+                <p class="text-xl text-gray-600">Capturing moments of joy, expression, and achievement at Swara Dance Academy</p>
+            </div>
+            
+            <!-- Gallery Filter -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="gallery-filter active bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-colors" data-filter="all">All</button>
+                <button class="gallery-filter bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-purple-600 hover:text-white transition-colors" data-filter="contemporary">Contemporary</button>
+                <button class="gallery-filter bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-purple-600 hover:text-white transition-colors" data-filter="bollywood">Bollywood</button>
+                <button class="gallery-filter bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-purple-600 hover:text-white transition-colors" data-filter="zumba">Zumba</button>
+                <button class="gallery-filter bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-purple-600 hover:text-white transition-colors" data-filter="yoga">Yoga</button>
+            </div>
+            
+            <!-- Photo Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="photo-grid">
+                <!-- Contemporary Photos -->
+                <div class="gallery-item contemporary group cursor-pointer" onclick="openModal('contemporary1')">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-100 to-blue-200 aspect-square">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">🌊</div>
+                                <p class="text-sm font-medium text-blue-800">Contemporary Class</p>
+                                <p class="text-xs text-blue-600">Fluid Movements</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item contemporary group cursor-pointer" onclick="openModal('contemporary2')">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-indigo-100 to-indigo-200 aspect-square">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💫</div>
+                                <p class="text-sm font-medium text-indigo-800">Solo Performance</p>
+                                <p class="text-xs text-indigo-600">Expressive Dance</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bollywood Photos -->
+                <div class="gallery-item bollywood group cursor-pointer" onclick="openModal('bollywood1')">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-orange-100 to-red-200 aspect-square">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">🎭</div>
+                                <p class="text-sm font-medium text-orange-800">Bollywood Fusion</p>
+                                <p class="text-xs text-orange-600">Colorful Performance</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item bollywood group cursor-pointer" onclick="openModal('bollywood2')">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-pink-100 to-purple-200 aspect-square">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">👑</div>
+                                <p class="text-sm font-medium text-purple-800">Traditional Dance</p>
+                                <p class="text-xs text-purple-600">Cultural Heritage</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Zumba Photos -->
+                <div class="gallery-item zumba group cursor-pointer" onclick="openModal('zumba1')">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-red-100 to-orange-200 aspect-square">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">🔥</div>
+                                <p class="text-sm font-medium text-red-800">Zumba Party</p>
+                                <p class="text-xs text-red-600">High Energy Fun</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item zumba group cursor-pointer" onclick="openModal('zumba2')">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-yellow-100 to-red-200 aspect-square">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">💃</div>
+                                <p class="text-sm font-medium text-yellow-800">Group Fitness</p>
+                                <p class="text-xs text-yellow-600">Dance Workout</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yoga Photos -->
+                <div class="gallery-item yoga group cursor-pointer" onclick="openModal('yoga1')">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-green-100 to-teal-200 aspect-square">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">🧘‍♀️</div>
+                                <p class="text-sm font-medium text-green-800">Peaceful Practice</p>
+                                <p class="text-xs text-green-600">Mind & Body</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item yoga group cursor-pointer" onclick="openModal('yoga2')">
+                    <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-100 to-green-200 aspect-square">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-4xl mb-2">🌸</div>
+                                <p class="text-sm font-medium text-blue-800">Meditation Flow</p>
+                                <p class="text-xs text-blue-600">Inner Balance</p>
+                            </div>
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                            <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="py-20 bg-gradient-to-r from-purple-600 to-pink-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-playfair text-4xl font-bold text-white mb-4">Follow Our Journey</h2>
+                <p class="text-xl text-purple-100">Stay connected and get inspired by our dance community</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- YouTube Section -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-white">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-red-600 p-3 rounded-lg mr-4">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-playfair text-2xl font-semibold">YouTube Channel</h3>
+                            <p class="text-purple-200">Watch our performances & tutorials</p>
+                        </div>
+                    </div>
+                    <p class="text-purple-100 mb-6 leading-relaxed">
+                        Subscribe to our YouTube channel for exclusive dance tutorials, behind-the-scenes content, student performances, and choreography breakdowns. New videos every week!
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">50K+</div>
+                            <div class="text-sm text-purple-200">Subscribers</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">200+</div>
+                            <div class="text-sm text-purple-200">Videos</div>
+                        </div>
+                    </div>
+                    <button class="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors font-medium flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                        Subscribe to Our Channel
+                    </button>
+                </div>
+
+                <!-- Instagram Section -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 text-white">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-3 rounded-lg mr-4">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-playfair text-2xl font-semibold">Instagram</h3>
+                            <p class="text-purple-200">Daily inspiration & updates</p>
+                        </div>
+                    </div>
+                    <p class="text-purple-100 mb-6 leading-relaxed">
+                        Follow us on Instagram for daily dance inspiration, student spotlights, class updates, and behind-the-scenes moments. Join our vibrant dance community!
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">25K+</div>
+                            <div class="text-sm text-purple-200">Followers</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold">1K+</div>
+                            <div class="text-sm text-purple-200">Posts</div>
+                        </div>
+                    </div>
+                    <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-colors font-medium flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        Follow Us on Instagram
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Modal -->
+    <div id="photo-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden">
+            <div class="flex justify-between items-center p-6 border-b">
+                <h3 id="modal-title" class="font-playfair text-2xl font-semibold text-gray-800"></h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="modal-content" class="p-6">
+                <!-- Modal content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-playfair text-4xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-600">Ready to start your dance journey? We'd love to hear from you!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-gray-50 rounded-2xl p-8">
+                        <h3 class="font-playfair text-2xl font-semibold text-gray-800 mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="bg-purple-100 p-3 rounded-lg mr-4">
+                                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Address</p>
+                                    <p class="text-gray-600">123 Dance Street, Arts District<br>City, State 12345</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-purple-100 p-3 rounded-lg mr-4">
+                                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Phone</p>
+                                    <p class="text-gray-600">(555) 123-DANCE</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-purple-100 p-3 rounded-lg mr-4">
+                                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Email</p>
+                                    <p class="text-gray-600">info@swaradanceacademy.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-semibold text-gray-800 mb-4">Studio Hours</h4>
+                            <div class="space-y-2 text-gray-600">
+                                <p>Monday - Friday: 6:00 AM - 10:00 PM</p>
+                                <p>Saturday: 8:00 AM - 8:00 PM</p>
+                                <p>Sunday: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form class="bg-gray-50 rounded-2xl p-8">
+                        <h3 class="font-playfair text-2xl font-semibold text-gray-800 mb-6">Send us a Message</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Interested Class</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                    <option>Select a class</option>
+                                    <option>Contemporary</option>
+                                    <option>Bollywood</option>
+                                    <option>Zumba</option>
+                                    <option>Yoga</option>
+                                    <option>Multiple classes</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Tell us about your dance goals..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-colors font-medium">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="font-playfair text-2xl font-bold mb-4">Swara Dance Academy</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Where passion meets movement. Join our community of dancers and discover the joy of expressing yourself through dance.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button class="bg-purple-600 p-2 rounded-lg hover:bg-purple-700 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </button>
+                        <button class="bg-purple-600 p-2 rounded-lg hover:bg-purple-700 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </button>
+                        <button class="bg-purple-600 p-2 rounded-lg hover:bg-purple-700 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#classes" class="hover:text-white transition-colors">Classes</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#gallery" class="hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Classes</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Contemporary</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Bollywood</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Zumba</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Yoga</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 Swara Dance Academy. All rights reserved. | Designed with ❤️ for dancers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            this.reset();
+        });
+
+        // Trial class booking
+        document.querySelectorAll('button:contains("Book Trial Class")').forEach(button => {
+            button.addEventListener('click', function() {
+                const className = this.closest('.dance-card').querySelector('h3').textContent;
+                alert(`Great choice! We'll contact you soon to schedule your ${className} trial class.`);
+            });
+        });
+
+        // Join Now buttons
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Join Now') || button.textContent.includes('Start Your Journey')) {
+                button.addEventListener('click', function() {
+                    document.querySelector('#contact').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+
+        // Gallery filtering functionality
+        const galleryFilters = document.querySelectorAll('.gallery-filter');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        galleryFilters.forEach(filter => {
+            filter.addEventListener('click', function() {
+                // Remove active class from all filters
+                galleryFilters.forEach(f => {
+                    f.classList.remove('active', 'bg-purple-600', 'text-white');
+                    f.classList.add('bg-gray-200', 'text-gray-700');
+                });
+                
+                // Add active class to clicked filter
+                this.classList.add('active', 'bg-purple-600', 'text-white');
+                this.classList.remove('bg-gray-200', 'text-gray-700');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Photo modal functionality
+        function openModal(photoId) {
+            const modal = document.getElementById('photo-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalContent = document.getElementById('modal-content');
+            
+            // Photo data
+            const photoData = {
+                'contemporary1': {
+                    title: 'Contemporary Class - Fluid Movements',
+                    description: 'Students exploring emotional expression through contemporary dance techniques.',
+                    details: 'This beautiful moment captures our intermediate contemporary class working on a piece about transformation and growth.'
+                },
+                'contemporary2': {
+                    title: 'Solo Performance - Expressive Dance',
+                    description: 'A stunning solo performance showcasing years of dedicated training.',
+                    details: 'One of our advanced students performing an original contemporary piece at our annual showcase.'
+                },
+                'bollywood1': {
+                    title: 'Bollywood Fusion - Colorful Performance',
+                    description: 'The vibrant energy of Bollywood dance in full display.',
+                    details: 'Our Bollywood fusion class performing a high-energy routine combining traditional and modern elements.'
+                },
+                'bollywood2': {
+                    title: 'Traditional Dance - Cultural Heritage',
+                    description: 'Celebrating the rich cultural heritage of Indian classical dance.',
+                    details: 'Students learning traditional Bollywood choreography with authentic costumes and expressions.'
+                },
+                'zumba1': {
+                    title: 'Zumba Party - High Energy Fun',
+                    description: 'The ultimate fitness party atmosphere in our Zumba classes.',
+                    details: 'Our Zumba instructors leading an energetic session that combines fitness with fun.'
+                },
+                'zumba2': {
+                    title: 'Group Fitness - Dance Workout',
+                    description: 'Community spirit and fitness goals coming together.',
+                    details: 'Students of all fitness levels enjoying the inclusive and supportive Zumba environment.'
+                },
+                'yoga1': {
+                    title: 'Peaceful Practice - Mind & Body',
+                    description: 'Finding inner peace through mindful yoga practice.',
+                    details: 'Our serene yoga studio providing the perfect environment for meditation and stretching.'
+                },
+                'yoga2': {
+                    title: 'Meditation Flow - Inner Balance',
+                    description: 'The harmony of breath, movement, and mindfulness.',
+                    details: 'Advanced yoga practitioners demonstrating beautiful flow sequences and balance poses.'
+                }
+            };
+            
+            const photo = photoData[photoId];
+            modalTitle.textContent = photo.title;
+            modalContent.innerHTML = `
+                <div class="space-y-4">
+                    <p class="text-lg text-gray-700">${photo.description}</p>
+                    <p class="text-gray-600">${photo.details}</p>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <p class="text-sm text-purple-800">
+                            <strong>Interested in joining this class?</strong> Contact us to schedule a trial session and experience the joy of dance firsthand!
+                        </p>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('photo-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('photo-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Social media button functionality
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Subscribe to Our Channel')) {
+                button.addEventListener('click', function() {
+                    alert('Thank you for your interest! You would be redirected to our YouTube channel: @SwaraDanceAcademy');
+                });
+            }
+            if (button.textContent.includes('Follow Us on Instagram')) {
+                button.addEventListener('click', function() {
+                    alert('Thank you for your interest! You would be redirected to our Instagram: @swaradanceacademy');
+                });
+            }
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white', 'shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96bedc0b05f67f63',t:'MTc1NDY1NDQ5MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
